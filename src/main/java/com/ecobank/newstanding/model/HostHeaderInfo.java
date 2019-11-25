@@ -1,48 +1,42 @@
 package com.ecobank.newstanding.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
 
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//        "sourceCode",
-//        "requestId",
-//        "requestToken",
-//        "requestType",
-//        "affiliateCode",
-//        "operatorCode",
-//        "ipAddress",
-//        "sourceChannelId"
-//})
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class HostHeaderInfo {
 
-//    @XmlElement(required = true)
-    protected String sourceCode;
+    private String sourceCode;
+    private String requestId;
+    private String requestToken;
+    private String requestType;
+    private String affiliateCode;
+    private String operatorCode;
+    private String ipAddress;
+    private String sourceChannelId;
 
-//    @XmlElement(required = true)
-    protected String requestId;
+    public HostHeaderInfo() {
+        this.sourceCode = "ECOBANKMOBILE";
+        this.requestId = "123456";
+        this.requestToken = "123456";
+        this.requestType = "STANDINGORDER";
+        this.affiliateCode = "";
+        this.operatorCode = "";
+        this.ipAddress = "1.1.1.1";
+        this.sourceChannelId = "MOBILE";
 
-//    @XmlElement(required = true)
-    protected String requestToken;
+    }
 
-//    @XmlElement(required = true)
-    protected String requestType;
-
-//    @XmlElement(required = true)
-    protected String affiliateCode;
-
-//    @XmlElement(required = true)
-    protected String operatorCode;
-
-//    @XmlElement(required = true)
-    protected String ipAddress;
-
-//    @XmlElement(required = true)
-    protected String sourceChannelId;
+    public HostHeaderInfo(String sourceCode, String requestId, String requestToken, String requestType, String affiliateCode, String operatorCode, String ipAddress, String sourceChannelId) {
+        this.sourceCode = sourceCode;
+        this.requestId = requestId;
+        this.requestToken = requestToken;
+        this.requestType = requestType;
+        this.affiliateCode = affiliateCode;
+        this.operatorCode = operatorCode;
+        this.ipAddress = ipAddress;
+        this.sourceChannelId = sourceChannelId;
+    }
 
 
     public String getSourceCode() {
@@ -106,20 +100,6 @@ public class HostHeaderInfo {
     }
 
     public void setSourceChannelId(String sourceChannelId) {
-        this.sourceChannelId = sourceChannelId;
-    }
-
-    public HostHeaderInfo() {
-    }
-
-    public HostHeaderInfo(String sourceCode, String requestId, String requestToken, String requestType, String affiliateCode, String operatorCode, String ipAddress, String sourceChannelId) {
-        this.sourceCode = sourceCode;
-        this.requestId = requestId;
-        this.requestToken = requestToken;
-        this.requestType = requestType;
-        this.affiliateCode = affiliateCode;
-        this.operatorCode = operatorCode;
-        this.ipAddress = ipAddress;
         this.sourceChannelId = sourceChannelId;
     }
 

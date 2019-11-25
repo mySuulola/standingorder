@@ -1,23 +1,21 @@
 package com.ecobank.newstanding.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//        "udfName",
-//        "udfValue",
-//})
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Extensions {
 
-//    @XmlElement(required = true)
-    protected String udfName;
+    private String udfName;
+    private String udfValue;
 
-//    @XmlElement(required = true)
-    protected String udfValue;
+    public Extensions() {
+    }
+
+    public Extensions(String udfName, String udfValue) {
+        this.udfName = udfName;
+        this.udfValue = udfValue;
+    }
 
 
     public String getUdfName() {
@@ -36,11 +34,11 @@ public class Extensions {
         this.udfValue = udfValue;
     }
 
-    public Extensions() {
-    }
-
-    public Extensions(String udfName, String udfValue) {
-        this.udfName = udfName;
-        this.udfValue = udfValue;
+    @Override
+    public String toString() {
+        return "Extensions{" +
+                "udfName='" + udfName + '\'' +
+                ", udfValue='" + udfValue + '\'' +
+                '}';
     }
 }

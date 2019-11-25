@@ -1,60 +1,53 @@
 package com.ecobank.newstanding.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Arrays;
 
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//        "hostHeaderInfo",
-//        "frequency",
-//        "mobileno",
-//        "transactiontype",
-//        "amount",
-//        "sourceaccount",
-//        "nooftransactions",
-//        "ccy",
-//        "startdate",
-//        "enddate",
-//        "extensions"
-//})
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class StandingOrderPayload {
 
-public class StandingOrderPostingRequest {
+    private HostHeaderInfo hostHeaderInfo;
+    private String frequency;
+    private String mobileno;
+    private String transactiontype;
+    private String amount;
+    private String sourceaccount;
+    private String nooftransactions;
+    private String ccy;
+    private String startdate;
+    private String enddate;
+    private Extensions[] extensions;
 
-//    @XmlElement(required = true)
-    protected HostHeaderInfo hostHeaderInfo;
 
-//    @XmlElement(required = true)
-    protected String frequency;
+    public StandingOrderPayload() {
+    }
 
-//    @XmlElement(required = true)
-    protected String mobileno;
-
-//    @XmlElement(required = true)
-    protected String transactiontype;
-
-//    @XmlElement(required = true)
-    protected String amount;
-
-//    @XmlElement(required = true)
-    protected String sourceaccount;
-
-//    @XmlElement(required = true)
-    protected String nooftransactions;
-
-//    @XmlElement(required = true)
-    protected String ccy;
-
-//    @XmlElement(required = true)
-    protected String startdate;
-
-//    @XmlElement(required = true)
-    protected String enddate;
-
-//    @XmlElement(name="extensions", required = true)
-    protected Extensions[] extensions ;
+    public StandingOrderPayload(
+            HostHeaderInfo hostHeaderInfo,
+            String frequency,
+            String mobileno,
+            String transactiontype,
+            String amount,
+            String sourceaccount,
+            String nooftransactions,
+            String ccy,
+            String startdate,
+            String enddate,
+            Extensions[] extensions
+    ) {
+        this.hostHeaderInfo = hostHeaderInfo;
+        this.frequency = frequency;
+        this.mobileno = mobileno;
+        this.transactiontype = transactiontype;
+        this.amount = amount;
+        this.sourceaccount = sourceaccount;
+        this.nooftransactions = nooftransactions;
+        this.ccy = ccy;
+        this.startdate = startdate;
+        this.enddate = enddate;
+        this.extensions = extensions;
+    }
 
 
     public HostHeaderInfo getHostHeaderInfo() {
@@ -145,22 +138,6 @@ public class StandingOrderPostingRequest {
         this.extensions = extensions;
     }
 
-    public StandingOrderPostingRequest() {
-    }
-
-    public StandingOrderPostingRequest(HostHeaderInfo hostHeaderInfo, String frequency, String mobileno, String transactiontype, String amount, String sourceaccount, String nooftransactions, String ccy, String startdate, String enddate, Extensions[] extensions) {
-        this.hostHeaderInfo = hostHeaderInfo;
-        this.frequency = frequency;
-        this.mobileno = mobileno;
-        this.transactiontype = transactiontype;
-        this.amount = amount;
-        this.sourceaccount = sourceaccount;
-        this.nooftransactions = nooftransactions;
-        this.ccy = ccy;
-        this.startdate = startdate;
-        this.enddate = enddate;
-        this.extensions = extensions;
-    }
 
     @Override
     public String toString() {

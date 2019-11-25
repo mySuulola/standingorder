@@ -2,21 +2,20 @@ package com.ecobank.newstanding.model;
 
 public class Request {
 
-    protected String affiliateCode;
-    protected String frequency;
-    protected String mobileno;
-    protected String transactiontype;
-    protected String amount;
-    protected String sourceaccount;
-    protected String nooftransactions;
-    protected String ccy;
-    protected String startdate;
-    protected String enddate;
-    protected String accName;
-    protected String accValue;
-    protected String destinationBankCode;
-    protected String bankName;
-//    protected Extensions[] extensions ;
+    private String affiliateCode;
+    private String frequency;
+    private String mobileno;
+    private String transactiontype;
+    private String amount;
+    private String sourceaccount;
+    private String nooftransactions;
+    private String ccy;
+    private String startdate;
+    private String enddate;
+    private String accName;
+    private String accValue;
+    private String destinationBankCode;
+    private String bankName;
 
     public String getAffiliateCode() {
         return affiliateCode;
@@ -150,11 +149,4 @@ public class Request {
                 '}';
     }
 
-    //    public Extensions[] getExtensions() {
-//        return extensions;
-//    }
-//
-//    public void setExtensions(Extensions[] extensions) {
-//        this.extensions = extensions;
-//    }
 }
